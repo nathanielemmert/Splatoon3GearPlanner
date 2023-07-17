@@ -1,0 +1,246 @@
+{
+    "$ref": "#/definitions/GearSeedDatabase",
+    "definitions": {
+        "GearSeedDatabase": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GearDB": {
+                    "$ref": "#/definitions/GearDB"
+                },
+                "UserData": {
+                    "$ref": "#/definitions/UserData"
+                },
+                "Profile": {
+                    "$ref": "#/definitions/Profile"
+                },
+                "LastUpdated": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "GearDB",
+                "LastUpdated",
+                "Profile",
+                "UserData"
+            ],
+            "title": "GearSeedDatabase"
+        },
+        "GearDB": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HaveGearHeadMap": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/HaveGearMap"
+                    }
+                },
+                "HaveGearShoesMap": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/HaveGearMap"
+                    }
+                },
+                "HaveGearClothesMap": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/HaveGearMap"
+                    }
+                }
+            },
+            "required": [
+                "HaveGearClothesMap",
+                "HaveGearHeadMap",
+                "HaveGearShoesMap"
+            ],
+            "title": "GearDB"
+        },
+        "HaveGearMap": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExDrinksArray": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "ExSkillArray": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "MainSkill": {
+                    "type": "integer"
+                },
+                "RandomContext": {
+                    "type": "integer"
+                },
+                "Favorite": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "ExDrinksArray",
+                "ExSkillArray",
+                "MainSkill",
+                "RandomContext"
+            ],
+            "title": "HaveGearMap"
+        },
+        "Profile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BadgeList": {
+                    "type": "array",
+                    "items": {}
+                },
+                "GoodsMap": {
+                    "$ref": "#/definitions/BynameAdjectiveMap"
+                },
+                "BynameAdjectiveMap": {
+                    "$ref": "#/definitions/BynameAdjectiveMap"
+                },
+                "BynameSubjectMap": {
+                    "$ref": "#/definitions/BynameAdjectiveMap"
+                },
+                "NamePlateBgMap": {
+                    "type": "array",
+                    "items": {}
+                },
+                "SkillChipMap": {
+                    "$ref": "#/definitions/BynameAdjectiveMap"
+                },
+                "Versus": {
+                    "$ref": "#/definitions/Versus"
+                },
+                "Coop": {
+                    "$ref": "#/definitions/Coop"
+                }
+            },
+            "required": [
+                "BadgeList",
+                "BynameAdjectiveMap",
+                "BynameSubjectMap",
+                "Coop",
+                "GoodsMap",
+                "NamePlateBgMap",
+                "SkillChipMap",
+                "Versus"
+            ],
+            "title": "Profile"
+        },
+        "BynameAdjectiveMap": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "BynameAdjectiveMap"
+        },
+        "Coop": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BossKillNumMap": {
+                    "$ref": "#/definitions/BynameAdjectiveMap"
+                },
+                "RareEnemyKillNumMap": {
+                    "$ref": "#/definitions/BynameAdjectiveMap"
+                }
+            },
+            "required": [
+                "BossKillNumMap",
+                "RareEnemyKillNumMap"
+            ],
+            "title": "Coop"
+        },
+        "Versus": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "WinCountByRule": {
+                    "$ref": "#/definitions/BynameAdjectiveMap"
+                },
+                "WinCountBySpecial": {
+                    "$ref": "#/definitions/BynameAdjectiveMap"
+                },
+                "WinCountByTclAtk": {
+                    "type": "integer"
+                },
+                "WinCountByTclDef": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "WinCountByRule",
+                "WinCountBySpecial",
+                "WinCountByTclAtk",
+                "WinCountByTclDef"
+            ],
+            "title": "Versus"
+        },
+        "UserData": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudRandomSet": {
+                    "$ref": "#/definitions/CloudRandomSet"
+                },
+                "UserKey": {
+                    "type": "string"
+                },
+                "H": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "CloudRandomSet",
+                "H",
+                "UserKey"
+            ],
+            "title": "UserData"
+        },
+        "CloudRandomSet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Map": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/Map"
+                    }
+                }
+            },
+            "required": [
+                "Map"
+            ],
+            "title": "CloudRandomSet"
+        },
+        "Map": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Context1": {
+                    "type": "integer"
+                },
+                "Context2": {
+                    "type": "integer"
+                },
+                "Context3": {
+                    "type": "integer"
+                },
+                "Context4": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "Context1",
+                "Context2",
+                "Context3",
+                "Context4"
+            ],
+            "title": "Map"
+        }
+    }
+}
